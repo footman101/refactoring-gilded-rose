@@ -2,6 +2,7 @@ package com.gildedrose;
 
 public class Item {
 
+    public static final int QUALITY_LIMIT = 50;
     public String name;
 
     public int sellIn;
@@ -28,24 +29,24 @@ public class Item {
         }
 
         if (name.equals("Aged Brie")){
-            if (quality < 50) {
+            if (quality < QUALITY_LIMIT) {
                 quality = quality + 1;
             }
             updateSellIn();
-            if (sellIn < 0 && quality < 50) {
+            if (sellIn < 0 && quality < QUALITY_LIMIT) {
                 quality = quality + 1;
             }
             return;
         }
 
         if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (quality < 50) {
+            if (quality < QUALITY_LIMIT) {
                 quality = quality + 1;
             }
-            if (sellIn < 11 && quality < 50) {
+            if (sellIn < 11 && quality < QUALITY_LIMIT) {
                 quality = quality + 1;
             }
-            if (sellIn < 6 && quality < 50) {
+            if (sellIn < 6 && quality < QUALITY_LIMIT) {
                 quality = quality + 1;
             }
             updateSellIn();
